@@ -6,6 +6,7 @@ const captionsWrapper = document.getElementById("captions-wrapper");
 const captionsText = document.getElementById("captions-text");
 const controlIcon = document.getElementById("buttonControl-icon");
 const audioElement = document.getElementById("audio");
+const loader = document.getElementById("loader");
 
 const apiUrl =
   "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist";
@@ -53,13 +54,7 @@ async function getJoke() {
   try {
     // Disable buttons
     toggleButtons();
-
-    if (firstTime) {
-      buttonControl.disabled = false;
-      buttonCaptions.disabled = false;
-      replaceClass(controlIcon, "fa-play", "fa-pause");
-      firstTime = false;
-    }
+    loader.hidden = false;
 
     // TODO: Add a loader functionality
 
@@ -77,6 +72,14 @@ async function getJoke() {
 
     // Text-to-Speech
     tellJoke(joke);
+
+    if (firstTime) {
+      buttonControl.disabled = false;
+      buttonCaptions.disabled = false;
+      replaceClass(controlIcon, "fa-play", "fa-pause");
+      firstTime = false;
+    }
+    loader.hidden = true;
   } catch (error) {
     console.log("Unexpected error:", error);
   }
