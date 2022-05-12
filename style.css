@@ -35,6 +35,51 @@ button {
   box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
 }
 
+.credits {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+.extra-buttons {
+  width: 60px;
+}
+
+.captions-container {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  width: 328px;
+  margin-top: 20px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px;
+  background: rgba(255, 255, 255, 0.75);
+
+  -moz-transition: height 0.5s, border-width 0.5s;
+  -ms-transition: height 0.5s, border-width 0.5s;
+  -o-transition: height 0.5s, border-width 0.5s;
+  -webkit-transition: height 0.5s, border-width 0.5s;
+  transition: height 0.5s, border-width 0.5s;
+  height: 0;
+  overflow: hidden;
+}
+
+.captions-text {
+  padding: 15px;
+  font-family: "Courier New", Courier, monospace;
+}
+
 button:hover {
   filter: brightness(95%);
 }
@@ -46,6 +91,15 @@ button:active {
 button:disabled {
   cursor: default;
   filter: brightness(30%);
+}
+
+@keyframes captions {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: fit-content;
+  }
 }
 
 /* Media Query: Tablet or Smaller */

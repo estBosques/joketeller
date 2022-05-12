@@ -17,10 +17,36 @@
   </head>
   <body>
     <div class="container">
-      <button id="button">Tell Me A Joke</button>
+      <div class="button-container">
+        <button id="button-tellJoke">Tell Me A Joke</button>
+        <button id="button-control" class="extra-buttons" disabled>
+          <i class="fa-solid fa-play" id="buttonControl-icon"></i>
+        </button>
+        <button id="button-captions" class="extra-buttons" disabled>
+          <i class="fa-solid fa-closed-captioning"></i>
+        </button>
+      </div>
+      <div class="captions-container" id="captions-container">
+        <div id="captions-wrapper">
+          <div class="captions-text" id="captions-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+            repellat aspernatur ab placeat optio quis ipsum, nam eius iste
+            aperiam dolorem animi id aut tenetur nemo ut repudiandae! Officiis,
+            illo.
+          </div>
+        </div>
+      </div>
       <!-- TODO: Add controls button and 'subtitles'? -->
       <audio id="audio" controls hidden></audio>
+      <p class="credits">
+        <a
+          href="https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY"
+        >
+          Robot dancing via GIPHY
+        </a>
+      </p>
     </div>
+
     <!-- SCRIPT -->
     <script src="voice.js"></script>
     <script src="script.js"></script>
